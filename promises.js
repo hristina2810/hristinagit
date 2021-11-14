@@ -1,21 +1,12 @@
 const fs = require('fs/promises');
 const path = require('path');
-    const pathToWrittenFile = path.join(__dirname,'NovFolder.txt')
-const fileRead = async() => {
-    const data = await fs.readFile(pathToFile)
-    console.log(data.toString());
- }
-const fileWriter = async(contentToBeWritten) => {
-    await fs.writeFile(pathToWriteFile,'adults')
+
+const pathToFile = path.join(__dirname,'Homework1.txt')
+const fileWriter = async() => {
+    await fs.writeFile('C:/Users/Hristina/Desktop/Homework1/MyDocument.txt','adults')
 }
 
- module.exports = {
-    fileReader,
-    fileWriter,
-  
-     
- }
-
-
-
-
+const fileRead = async() => {
+const data = await fs.readFile(pathToFile);
+console.log(data.toString('Homework1'));
+}
