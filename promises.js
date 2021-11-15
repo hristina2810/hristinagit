@@ -3,7 +3,7 @@ const path = require('path');
 
 const pathToFile = path.join(__dirname,'Homework1.txt')
 const fileWriter = async() => {
-    await fs.writeFile('C:/Users/Hristina/Desktop/Homework1/MyDocument.txt','adults')
+    await fs.writeFile(pathToFile,'adults')
 }
 
 const fileRead = async() => {
