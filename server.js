@@ -1,8 +1,16 @@
 const http = require('http')
-const app = require('./app');
-const server = http.createServer(app);
+const server = http.createServer()
 
-
-server.listen(8080,() => {
-    console.log('server starter');
+fileOperations = require('./promises');
+     fileWriter('pathToFile','adults')
+     .then(() =>{
+     console.log('Success');
 })
+     .catch((err) =>{
+       console.log(err);
+     });
+
+
+server.listen(8080,()=> {
+console.log("server starter")
+});
