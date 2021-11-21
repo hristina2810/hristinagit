@@ -7,28 +7,28 @@ router.post('./mkwines', mkwinesHandlers.getAllWines);
 
 const wines = [
 {
-    wine:'red'
-    sort:'Vranec'
-    vintage:2004
+    id: 1,
+    name:'Vranec',
+    year:2004
 },
 {
-    wine:'red'
-    sort:'Stanusina'
-    vintage:2020
+    id: 2,
+    name:'Stanusina',
+    year: 2020
 },
 {
-    wine:'white'
-    sort:'Temjanika'
-    vintage:2020
+    id:3,
+    name:'Temjanika',
+    year:2020
 },
 {
-    wine:'white'
-    sort:'Smederevka'
-    vintage:2020
+    id: 4,
+    name:'Smederevka',
+    year: 2020
 }
 ];
 
-const getAllWines(req,res,next)=>{
+const getAllWines=(req,res,next)=>{
     return response.Status(200).json(mkwines);
 
 
