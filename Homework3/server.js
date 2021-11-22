@@ -6,5 +6,5 @@ const PORT = process.env.PORT;
 const server = http.createServer(app);
 
 serever.listen(PORT, () => {
-    console.log('process Port: ' + PORT);
+    console.log('Server running');
 });

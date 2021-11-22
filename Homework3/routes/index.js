@@ -1,17 +1,18 @@
-const router = require ('express').Router();
-const swaggerUi = require ('swagger-ui-express');
+const router = require('express').Router();
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocs = require('../api-docs.json');
+const planetHandlers = require('../handlers/planets');
+
+router.get('/planets', planetHandlers.getAllPlanets);
+router.get('/planets', planetHandlers.getPlanetById);
+router.post('/planets', planetHandlers.addNewPlanet);
+router.put('/planets', planetHandlers.updatePlanet);
+router.delete('/planets', planetHandlers.deletePlanet);
+router.use('/api-docs', swagegrUi.serve);
+router.get('/api-docs', swaggerUi.setup(swaggerDocs));
 
 
-router.use('/node_modules', swaggerUi.serve);
-router.get('/swaggerUiConfig' , (req,res,next) => {});
-router.get('/swaggerUiControllers' ,(req,res,next) => {});
-router.get('/swaggerRouter' , (req,res,next) => {});
-router.get('/swaggerValidator' , (req,res,next) => {});
-router.get('/swaggerSecurity' , (req,res,next) => {});
-router.get('/swaggerRaw' , (req,res,next) => {});
 
-router.use('*', async (req, res, next) => {
-    return res.status(404).json('Not Found.');
-  });
+
 
 module.exports = router;
