@@ -6,7 +6,7 @@ router.get('/mkwines',mkwinesHandlers.getAllWines);
 router.get('/mkwines/:wine',wineHandlers.getWineById)
 
 router.use('*',async(req,res,next)=>{
-    return res.Status(404.json('Not Found.'));
+    return res.status(404).json ('Not Found');
 });
 
 module.exports = router;

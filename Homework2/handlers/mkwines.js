@@ -37,3 +37,4 @@ const getAllWines=(req,res,next)=>{
         getWinesById,
      };
     };
+    
