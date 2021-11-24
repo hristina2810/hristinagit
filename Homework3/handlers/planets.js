@@ -17,7 +17,7 @@ const getAllPlanetById = async(req,res,next) => {
     const planetBody = req.body;
 
     if (!planetBody.name || !planetBody.size || !planetBody.destanceFromSun) {
-        return res.status(400).json ('Missing required fields!');
+        return res.status(400).json('Missing required fields!');
     }
     
     await Planet.addPlanet(planetBody);
