@@ -5,6 +5,6 @@ const app = require('./app');
 const PORT = process.env.PORT;
 const server = http.createServer(app);
 
-serever.listen(PORT, () => {
+server.listen(PORT, () => {
     console.log('Server running');
 });

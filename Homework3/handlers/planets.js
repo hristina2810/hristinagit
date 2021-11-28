@@ -35,7 +35,7 @@ const getPlanetById = async(req,res,next) => {
             return res.status(200).json('Planet edited');
         };
     
-    const detetePlanet = async(req,res,next) => {
+    const deletePlanet = async(req,res,next) => {
         const id = +req.params.id;
         await Planet.deletePlanet(id);
         return res.stauts(200).json('Deleted planet!');
@@ -46,5 +46,5 @@ const getPlanetById = async(req,res,next) => {
     getPlanetById,
     addNewPlanet,
     updatePlanet,
-    detetePlanet,
+    deletePlanet,
 };
