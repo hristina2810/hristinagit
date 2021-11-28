@@ -7,7 +7,7 @@ const getPlanetById = async(req,res,next) => {
     const id = +req.params.id;
     const planet = await Planet.getPlanetById(id);
     if (planet) {
-        return res.staus(200).json(planet);;
+        return res.staus(200).json(planet);
     } else {
         return res.status(400).json('Planet does not exist');
     }
