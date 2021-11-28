@@ -1,11 +1,11 @@
 const getAllPlanets = async(req,res,next) => {
-const planets = await Planet.getAllPlanets();
-return res.status(200).json(planets);
+   const planets = await Planet.getAllPlanets();
+   return res.status(200).json(planets);
 };
 
-const getAllPlanetById = async(req,res,next) => {
+const getPlanetById = async(req,res,next) => {
     const id = +req.params.id;
-    const planet = await planet.getPlanetById(id);
+    const planet = await Planet.getPlanetById(id);
     if (planet) {
         return res.staus(200).json(planet);;
     } else {
@@ -38,13 +38,13 @@ const getAllPlanetById = async(req,res,next) => {
     const detetePlanet = async(req,res,next) => {
         const id = +req.params.id;
         await Planet.deletePlanet(id);
-        return res.stauts(200).json ('Deleted planet!');
-    }   ; 
+        return res.stauts(200).json('Deleted planet!');
+    }; 
 
  module.exports = {
     getAllPlanets,
     getPlanetById,
     addNewPlanet,
     updatePlanet,
-    deletePlanet,
+    detetePlanet,
 };
