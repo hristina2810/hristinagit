@@ -9,10 +9,10 @@ router.use('/api-docs.json', swaggerUi.serve);
 router.get('/api-docs.json', swaggerUi.setup(swaggerDocs));
 
 router.get('/residents', ResidentHandlers.getAllResident);
-router.get('/residents:id', ResidentHandlers.getResidentById);
-router.post('/planets', ResidentHandlers.addNewResident);
+router.get('/residents/:id', ResidentHandlers.getResidentById);
+router.post('/residents', ResidentHandlers.addNewResident);
 router.put('/residents', ResidentHandlers.updateResident);
-router.delete('/residents:id',ResidentHandlers.deleteResident );
+router.delete('/residents/:id',ResidentHandlers.deleteResident );
 
 
 
