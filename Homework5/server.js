@@ -10,7 +10,8 @@ const server = http.createServer(app);
 connectToDb()
     .then(() => {
     server.listen(PORT,() => {
-        console.log('Server running! Database connected.')
+        console.log('Server running! Database connected.');
     });
-    })
-    
+  }).catch((err) => {
+        console.log(err);
+    });

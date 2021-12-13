@@ -1,10 +1,10 @@
 const Resident =  require('../models/Resident');
-const addAllResidents = async(req,res,next) => {
+const getAllResidents = async(req,res,next) => {
 try {
-    const Residents = await Resident.find();
+    const residents = await Resident.find();
     return res.status(200).json(residents);
 }catch (err) {
-    return res.staus(500).json(err);
+    return res.status(500).json(err);
 }
 };
 
@@ -19,12 +19,12 @@ if(!residentBody.name ){
 };
 
 try {
-    await resident.create(newResident);
+   await Resident.create(newResident);
     return res.status(201).json('Resident added!');
 } catch (err) {
     return res.status(500).json(err);
 };
-const updeteResident = async(req,res,next) => {
+const updateResident = async(req,res,next) => {
     const id = req.params.id;
     const residentBody = req.body;
 const newResident ={
@@ -34,7 +34,7 @@ try {
     await Resident.findByIdAndUpdate(id, newResident);
     return res.status(200).json('Update resident!');
 } catch (err) {
-    return res.stats(500).json(err);
+    return res.status(500).json(err);
 };
 };
 const deleteResident = async(req,res,next) => {
@@ -50,7 +50,7 @@ const deleteResident = async(req,res,next) => {
 
  module.exports = {
      getAllResidents,
-     addnewResident,
+     addNewResident,
      updateResident,
      deleteResident,
  };
